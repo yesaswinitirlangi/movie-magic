@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Seats - MovieMagic</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <h2>🎬 MovieMagic</h2>
+            </div>
+            <div class="nav-menu">
+                <a href="{{ url_for('home') }}" class="nav-link">Movies</a>
+                <a href="{{ url_for('tickets') }}" class="nav-link">My Tickets</a>
+                <a href="{{ url_for('login') }}" class="nav-link">Logout</a>
+            </div>
+        </div>
+    </nav>
+
+    <main class="main-content">
+        <div class="container">
+            <div class="booking-section">
+                <div class="movie-details">
+                    <h1>🎬 Fidda 💗 </h1>
+                    <div class="movie-rating">
+                        <div class="stars">
+                            <span class="star">★</span>
+                            <span class="star">★</span>
+                            <span class="star">★</span>
+                            <span class="star">★</span>
+                            <span class="star">★</span>
+                        </div>
+                        <span class="rating-value">9.2/10</span>
+                    </div>
+                    <p><strong>Duration:</strong> 181 minutes</p>
+                    <p><strong>Genre:</strong> Action, Adventure, Sci-Fi</p>
+                    <p><strong>Price:</strong> $12.99 per seat</p>
+                </div>
+
+                <div class="show-times">
+                    <h3>⏰ Select Show Time</h3>
+                    <div class="time-slots">
+                        <input type="radio" id="time1" name="showTime" value="10:00 AM" checked>
+                        <label for="time1" class="time-slot">10:00 AM</label>
+                        
+                        <input type="radio" id="time2" name="showTime" value="1:00 PM">
+                        <label for="time2" class="time-slot">1:00 PM</label>
+                        
+                        <input type="radio" id="time3" name="showTime" value="4:00 PM">
+                        <label for="time3" class="time-slot">4:00 PM</label>
+                        
+                        <input type="radio" id="time4" name="showTime" value="7:00 PM">
+                        <label for="time4" class="time-slot">7:00 PM</label>
+                    </div>
+                </div>
+
+                <div class="cinema-layout">
+                    <div class="screen">🎬 SCREEN 🎬</div>
+                    <div class="seats-container">
+                        <div class="seats-grid" id="seatsGrid">
+                            <!-- Row A -->
+                            <div class="seat-row">
+                                <span class="row-label">A</span>
+                                <div class="seat available" data-seat="A1">1</div>
+                                <div class="seat available" data-seat="A2">2</div>
+                                <div class="seat occupied" data-seat="A3">3</div>
+                                <div class="seat available" data-seat="A4">4</div>
+                                <div class="seat available" data-seat="A5">5</div>
+                                <div class="seat available" data-seat="A6">6</div>
+                                <div class="seat occupied" data-seat="A7">7</div>
+                                <div class="seat available" data-seat="A8">8</div>
+                            </div>
+                            <!-- Row B -->
+                            <div class="seat-row">
+                                <span class="row-label">B</span>
+                                <div class="seat available" data-seat="B1">1</div>
+                                <div class="seat available" data-seat="B2">2</div>
+                                <div class="seat available" data-seat="B3">3</div>
+                                <div class="seat available" data-seat="B4">4</div>
+                                <div class="seat available" data-seat="B5">5</div>
+                                <div class="seat occupied" data-seat="B6">6</div>
+                                <div class="seat available" data-seat="B7">7</div>
+                                <div class="seat available" data-seat="B8">8</div>
+                            </div>
+                            <!-- Row C -->
+                            <div class="seat-row">
+                                <span class="row-label">C</span>
+                                <div class="seat available" data-seat="C1">1</div>
+                                <div class="seat available" data-seat="C2">2</div>
+                                <div class="seat available" data-seat="C3">3</div>
+                                <div class="seat available" data-seat="C4">4</div>
+                                <div class="seat available" data-seat="C5">5</div>
+                                <div class="seat available" data-seat="C6">6</div>
+                                <div class="seat available" data-seat="C7">7</div>
+                                <div class="seat available" data-seat="C8">8</div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="seat-legend">
+                        <div class="legend-item">
+                            <div class="seat available"></div>
+                            <span>Available</span>
+                        </div>
+                        <div class="legend-item">
+                            <div class="seat selected"></div>
+                            <span>Selected</span>
+                        </div>
+                        <div class="legend-item">
+                            <div class="seat occupied"></div>
+                            <span>Occupied</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="booking-summary">
+                    <div class="summary-details">
+                        <h3>📋 Booking Summary</h3>
+                        <p>Movie: <span id="movieTitle">Avengers: Endgame</span></p>
+                        <p>Show Time: <span id="selectedTime">10:00 AM</span></p>
+                        <p>Selected Seats: <span id="selectedSeats">None</span></p>
+                        <p class="total">Total Amount: $<span id="totalAmount">0.00</span></p>
+                    </div>
+                    <form method="POST" action="/book_tickets">
+                        <input type="hidden" id="hiddenSeats" name="seats" value="">
+                        <input type="hidden" id="hiddenTime" name="time" value="10:00 AM">
+                        <input type="hidden" name="movie" value="Avengers: Endgame">
+                        <button type="submit" id="bookButton" class="btn btn-primary btn-full" disabled>Book Tickets</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script>
+        let selectedSeats = [];
+        const pricePerSeat = 12.99;
+
+        document.querySelectorAll('.seat.available').forEach(seat => {
+            seat.addEventListener('click', function() {
+                const seatId = this.dataset.seat;
+                
+                if (this.classList.contains('selected')) {
+                    this.classList.remove('selected');
+                    selectedSeats = selectedSeats.filter(s => s !== seatId);
+                } else {
+                    this.classList.add('selected');
+                    selectedSeats.push(seatId);
+                }
+                
+                updateBookingSummary();
+            });
+        });
+
+        document.querySelectorAll('input[name="showTime"]').forEach(radio => {
+            radio.addEventListener('change', function() {
+                document.getElementById('selectedTime').textContent = this.value;
+                document.getElementById('hiddenTime').value = this.value;
+            });
+        });
+
+        function updateBookingSummary() {
+            const seatsDisplay = selectedSeats.length > 0 ? selectedSeats.join(', ') : 'None';
+            const total = (selectedSeats.length * pricePerSeat).toFixed(2);
+            
+            document.getElementById('selectedSeats').textContent = seatsDisplay;
+            document.getElementById('totalAmount').textContent = total;
+            document.getElementById('hiddenSeats').value = selectedSeats.join(',');
+            document.getElementById('bookButton').disabled = selectedSeats.length === 0;
+        }
+    </script>
+</body>
+</html>

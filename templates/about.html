@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>About - MovieMagic</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <h2>🎬 Movie Magic</h2>
+            </div>
+            <div class="nav-menu">
+                <a href="{{ url_for('index') }}" class="nav-link">Home</a>
+                <a href="{{ url_for('about') }}" class="nav-link active">About</a>
+                <a href="{{ url_for('contact') }}" class="nav-link">Contact</a>
+                <a href="{{ url_for('login') }}" class="nav-link">Login</a>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container main-content">
+        <h1 style="color: #33ff00; margin-bottom: 1rem;">About MovieMagic</h1>
+        <p>MovieMagic is your smart, secure, and stylish movie ticket booking solution. 
+        We bring the ease of online booking with real-time seat selection, lightning-fast confirmation, and a user-friendly interface tailored for modern users.</p>
+
+        <h2 style="margin-top: 2rem; color: #80ff00;">Our Vision</h2>
+        <p>To create a seamless and enjoyable ticket booking experience for everyone, anytime and anywhere.</p>
+
+        <h2 style="margin-top: 2rem; color: #6fff00;">Our Team</h2>
+        <p>We’re a team of passionate developers and designers dedicated to enhancing your movie experience.</p>
+    </div>
+
+    <footer class="footer">
+        &copy; 2024 MovieMagic. All rights reserved.
+    </footer>
+</body>
+</html>

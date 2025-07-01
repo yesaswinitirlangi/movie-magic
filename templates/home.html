@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movies - MovieMagic</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <h2>🎬 MovieMagic</h2>
+            </div>
+            <div class="nav-menu">
+                <a href="{{ url_for('index') }}" class="nav-link">Home</a>
+                <a href="{{ url_for('home') }}" class="nav-link active">Movies</a>
+                <a href="{{ url_for('tickets') }}"class="nav-link">My Tickets</a>
+                <a href="{{ url_for('login') }}" class="nav-link">Logout</a>
+            </div>
+            <div class="nav-user">
+                <span>Welcome, User! 👋</span>
+            </div>
+        </div>
+    </nav>
+
+    <main class="main-content">
+        <div class="container">
+            <section class="movies-section">
+                <h1>🎬 Now Playing</h1>
+                <div class="movies-grid">
+                    <div class="movie-card">
+                        <div class="movie-poster">
+                            <img src="https://via.placeholder.com/300x400/FF6B00/000000?text=Movie+1" alt="Avengers: Fidda">
+                        </div>
+                        <div class="movie-info">
+                            <h3>Avengers: Endgame</h3>
+                            <div class="movie-rating">
+                                <div class="stars">
+                                    <span class="star">★</span>
+                                    <span class="star">★</span>
+                                    <span class="star">★</span>
+                                    <span class="star">★</span>
+                                    <span class="star">★</span>
+                                </div>
+                                <span class="rating-value">9.2/10</span>
+                            </div>
+                            <p class="movie-genre">Action, Adventure, Sci-Fi</p>
+                            <p class="movie-duration">181 minutes</p>
+                            <p class="movie-description">After the devastating events of Infinity War, the Avengers assemble once more...</p>
+                            <div class="movie-price">
+                                <span class="price">$12.99</span>
+                            </div>
+                            <a href="booking_form.html?movie=1" class="btn btn-primary">Book Now</a>
+                        </div>
+                    </div>
+
+                    <div class="movie-card">
+                        <div class="movie-poster">
+                            <img src="https://via.placeholder.com/300x400/FF6B00/000000?text=Movie+2" alt="pushpa 2">
+                        </div>
+                        <div class="movie-info">
+                            <h3>The Dark Knight</h3>
+                            <div class="movie-rating">
+                                <div class="stars">
+                                    <span class="star">★</span>
+                                    <span class="star">★</span>
+                                    <span class="star">★</span>
+                                    <span class="star">★</span>
+                                    <span class="star">★</span>
+                                </div>
+                                <span class="rating-value">9.0/10</span>
+                            </div>
+                            <p class="movie-genre">Action, Crime, Drama</p>
+                            <p class="movie-duration">152 minutes</p>
+                            <p class="movie-description">When the menace known as the Joker wreaks havoc on Gotham...</p>
+                            <div class="movie-price">
+                                <span class="price">$11.99</span>
+                            </div>
+                            <a href="booking_form.html?movie=2" class="btn btn-primary">Book Now</a>
+                        </div>
+                    </div>
+
+                    <div class="movie-card">
+                        <div class="movie-poster">
+                            <img src="https://via.placeholder.com/300x400/FF6B00/000000?text=Movie+3" alt="guntur karam">
+                        </div>
+                        <div class="movie-info">
+                            <h3>Inception</h3>
+                            <div class="movie-rating">
+                                <div class="stars">
+                                    <span class="star">★</span>
+                                    <span class="star">★</span>
+                                    <span class="star">★</span>
+                                    <span class="star">★</span>
+                                    <span class="star">★</span>
+                                </div>
+                                <span class="rating-value">8.8/10</span>
+                            </div>
+                            <p class="movie-genre">Action, Sci-Fi, Thriller</p>
+                            <p class="movie-duration">148 minutes</p>
+                            <p class="movie-description">A thief who steals corporate secrets through dream-sharing technology...</p>
+                            <div class="movie-price">
+                                <span class="price">$13.99</span>
+                            </div>
+                            <a href="booking_form.html?movie=3" class="btn btn-primary">Book Now</a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2025 MovieMagic. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>

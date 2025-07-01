@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Tickets - MovieMagic</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <h2>🎬 MovieMagic</h2>
+            </div>
+            <div class="nav-menu">
+                <a href="{{ url_for('home') }}" class="nav-link">Movies</a>
+                <a href="{{ url_for('tickets') }}" class="nav-link active">My Tickets</a>
+                <a href="{{ url_for('login') }}"class="nav-link">Logout</a>
+            </div>
+            <div class="nav-user">
+                <span>Welcome, User! 👋</span>
+            </div>
+        </div>
+    </nav>
+
+    <main class="main-content">
+        <div class="container">
+            <section class="tickets-section">
+                <h1>🎫 My Movie Tickets</h1>
+                
+                <div class="tickets-grid">
+                    <div class="ticket-card">
+                        <div class="ticket-header">
+                            <h3>Avengers: Endgame</h3>
+                            <div class="ticket-id">Ticket #001</div>
+                        </div>
+                        
+                        <div class="ticket-details">
+                            <div class="detail-row">
+                                <span class="label">Seats:</span>
+                                <span class="value">A1, A2</span>
+                            </div>
+                            <div class="detail-row">
+                                <span class="label">Date:</span>
+                                <span class="value">December 25, 2024</span>
+                            </div>
+                            <div class="detail-row">
+                                <span class="label">Show Time:</span>
+                                <span class="value">7:00 PM</span>
+                            </div>
+                            <div class="detail-row">
+                                <span class="label">Cinema:</span>
+                                <span class="value">MovieMagic Theater 1</span>
+                            </div>
+                            <div class="detail-row total">
+                                <span class="label">Total Amount:</span>
+                                <span class="value">$25.98</span>
+                            </div>
+                        </div>
+                        
+                        <div class="ticket-actions">
+                            <button class="btn btn-secondary">Download</button>
+                            <button class="btn btn-danger">Cancel</button>
+                        </div>
+                    </div>
+
+                    <div class="ticket-card">
+                        <div class="ticket-header">
+                            <h3>The Dark Knight</h3>
+                            <div class="ticket-id">Ticket #002</div>
+                        </div>
+                        
+                        <div class="ticket-details">
+                            <div class="detail-row">
+                                <span class="label">Seats:</span>
+                                <span class="value">B5</span>
+                            </div>
+                            <div class="detail-row">
+                                <span class="label">Date:</span>
+                                <span class="value">December 26, 2024</span>
+                            </div>
+                            <div class="detail-row">
+                                <span class="label">Show Time:</span>
+                                <span class="value">4:00 PM</span>
+                            </div>
+                            <div class="detail-row">
+                                <span class="label">Cinema:</span>
+                                <span class="value">MovieMagic Theater 2</span>
+                            </div>
+                            <div class="detail-row total">
+                                <span class="label">Total Amount:</span>
+                                <span class="value">$11.99</span>
+                            </div>
+                        </div>
+                        
+                        <div class="ticket-actions">
+                            <button class="btn btn-secondary">Download</button>
+                            <button class="btn btn-danger">Cancel</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="empty-state" style="display: none;">
+                    <h2>No Tickets Found</h2>
+                    <p>You don't have any movie tickets yet.</p>
+                    <a href="{{ url_for('home') }}" class="btn btn-primary">Browse Movies</a>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2025 MovieMagic. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>

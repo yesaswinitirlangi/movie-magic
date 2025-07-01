@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Contact - MovieMagic</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <h2>🎬 Movie Magic</h2>
+            </div>
+            <div class="nav-menu">
+                <a href="{{ url_for('index') }}" class="nav-link">Home</a>
+                <a href="{{ url_for('about') }}" class="nav-link">About</a>
+                <a href="{{ url_for('contact') }}" class="nav-link active">Contact</a>
+                <a href="{{ url_for('login') }}" class="nav-link">Login</a>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container main-content">
+        <h1 style="color: #66ff00; margin-bottom: 1rem;">Contact Us</h1>
+        <p>If you have any questions or feedback, feel free to reach out!</p>
+
+        <form class="auth-form" method="POST">
+            <div class="form-group">
+                <label for="name">Name</label>
+                <input type="text" id="name" name="name" required>
+            </div>
+
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+
+            <div class="form-group">
+                <label for="message">Your Message</label>
+                <textarea id="message" name="message" rows="5" required></textarea>
+            </div>
+
+            <button type="submit" class="btn btn-primary">Send Message</button>
+        </form>
+    </div>
+
+    <footer class="footer">
+        &copy; 2024 MovieMagic. All rights reserved.
+    </footer>
+</body>
+</html>
