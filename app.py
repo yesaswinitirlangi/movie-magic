@@ -11,7 +11,7 @@ app = Flask(__name__)
 app.secret_key = os.environ.get('SECRET_KEY', 'your_fallback_secret_key')
 
 # AWS Configuration
-AWS_REGION = os.environ.get('AWS_REGION', 'your-region')
+AWS_REGION = os.environ.get('AWS_REGION', 'us-east-1')
 SNS_TOPIC_ARN = os.environ.get('SNS_TOPIC_ARN', 'arn:aws:sns:us-east-1:980921720508:MovieTicketnotifaction')
 
 # Initialize AWS services
