@@ -12,7 +12,7 @@ app.secret_key = os.environ.get('SECRET_KEY', 'your_fallback_secret_key')
 
 # AWS Configuration
 AWS_REGION = os.environ.get('AWS_REGION', 'your-region')
-SNS_TOPIC_ARN = os.environ.get('SNS_TOPIC_ARN', 'your-sns-aws-key')
+SNS_TOPIC_ARN = os.environ.get('SNS_TOPIC_ARN', 'arn:aws:sns:us-east-1:980921720508:MovieTicketnotifaction')
 
 # Initialize AWS services
 dynamodb = boto3.resource('dynamodb', region_name=AWS_REGION)
